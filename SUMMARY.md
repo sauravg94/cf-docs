@@ -1,9 +1,3 @@
-# Summary
+# Table of contents
 
-* [Introduction](README.md)
-* [CFML Tags](cfml-tags/index.md)
-  * [cfoutput](cfml-tags/cfoutput.md)
-  * [cfloop](cfml-tags/cfloop.md)
-* [CFML Functions](cfml-functions/index.md)
-  * [Abs](cfml-functions/abs.md)
-  * [ArrayLen](cfml-functions/arraylen.md)
+* [Page](README.md)
