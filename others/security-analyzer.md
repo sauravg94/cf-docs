@@ -9,6 +9,7 @@ For any web application, security plays a critical role. It is important to avoi
 Security Analyzer is a new feature in Adobe ColdFusion 2016 release. This feature is integrated into ColdFusion Builder to enable developers to avoid common security pitfalls and vulnerabilities while writing ColdFusion code.
 
 Use this feature to view:
+
 - Vulnerable code in the editor
 - Vulnerability or type of attack
 - Error and Warning
@@ -47,14 +48,14 @@ Follow the steps below to use Security Analyzer for your project folder or file:
 
 ![Vulnerabilities](Vulnerabilities.png)
 
-7. Click Security Issues on the left pane to view the list of vulnerabilities
-8. As shown in the left pane of the snapshot, click the vulnerability type such as SQL Injection or XSS attack to view the corresponding problem statement
-9. You can also view the suggested solution at the right pane
-10. Alternatively, you can click any error on the middle pane to view the corresponding statement and solution at the right pane
-11. Double-click each error on the middle pane to view the corresponding line in the Editor
-12. Use filters for File Name, Attack Name, Severity Level, and Type in the middle pane
-13. Start typing the file name in the search area to locate the files with vulnerabilities
-14. You can narrow down your search based on severity level as high, medium, and low by clicking All dropdown list
+1. Click Security Issues on the left pane to view the list of vulnerabilities
+1. As shown in the left pane of the snapshot, click the vulnerability type such as SQL Injection or XSS attack to view the corresponding problem statement
+1. You can also view the suggested solution at the right pane
+1. Alternatively, you can click any error on the middle pane to view the corresponding statement and solution at the right pane
+1. Double-click each error on the middle pane to view the corresponding line in the Editor
+1. Use filters for File Name, Attack Name, Severity Level, and Type in the middle pane
+1. Start typing the file name in the search area to locate the files with vulnerabilities
+1. You can narrow down your search based on severity level as high, medium, and low by clicking All dropdown list
 
 > **Note:** You can notice the Both dropdown list as grayed out sometimes. This happens when your cursor is already pointing to Errors or warnings issue type in the left pane. You can bring it back to active state by selecting the Security Issues folder.
 
@@ -92,51 +93,43 @@ Security Analyzer is exposed as a service by the ColdFusion Server. By running S
 
 As shown in the following sample code, the attacker can create arbitrary SQL statements to execute against the database by passing values into the url.id variable. For example, the attacker can pass a value of "1; DELETE FROM news" to delete all news articles in the table, or "0 UNION SELECT username, password FROM users" to extract username and password values from the database.
 
-cfml
-<cfquery>
-SELECT headline, story FROM news WHERE id = #url.id#
-</cfquery>
 
 
 #### Vulnerable scenarios
 
-cfml
-<cfquery name="SelectExample" datasource="cfdocexamples">
-select * FROM Employee WHERE EmpID=#var#
-</cfquery>
-
+```
 <cfset result = QueryExecute("select * from Employees where empid=#id#5")>
 
 <cfset v3=form.vf>
 <cfset employees = ORMExecuteQuery("from Employee where name=#v3#")>
-
+```
 
 All the above code samples use an unknown variable inside the query statement which makes them vulnerable.
 
 ### XSS Attack
 
-cfml
+```
 <cfoutput>Hello #url.name#</cfoutput>
-
+```
 
 Using the above code, the attacker can pass JavaScript into the url.name variable to be executed in the browser of anyone visiting the URL. Attackers also try to post XSS code that can be stored in a database and execute later. For example, posting a comment to display for all visitors of a page.
 
 #### Vulnerable scenarios
 
-cfml
+```
 <cfoutput>Hello #name2#</cfoutput>
 
 <cfparam name = "id12" default = "my default value" type="string">
 <cfoutput>#id12#</cfoutput>
-
+```
 
 When a variable declared through cfparam is of type string, it is vulnerable code.
 
-cfml
+```
 <cfoutput>
 <b>LINK to URL</b> <a target="_blank" href="http://#url.url#"></a>
 </cfoutput>
-
+```
 
 As an unknown variable is used for the url link in the anchor tag, it is vulnerable to XSS attack.
 
@@ -147,7 +140,3 @@ The cfhtmltopdf tag introduced in ColdFusion 11 provides powerful HTML rendering
 JavaScript can be executed during rendering in the cfhtmltopdf tag. Because the JavaScript would be executed on the server during rendering, the risks are different from a client side cross site scripting attack. Some of the risks include denial of service and potential exploit for unknown vulnerabilities in Webkit. In addition, there is a risk of bypassing the network firewall as the server can be behind a firewall with network access to other systems.
 
 #### Vulnerable scenarios
-
-cfml
-<cfhtmltopdf>
-<h1>Hello <cfoutput>#pf2
