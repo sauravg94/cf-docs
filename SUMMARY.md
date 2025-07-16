@@ -8,3 +8,5 @@
 * [CFML Functions](cfml-functions/index.md)
   * [Abs](cfml-functions/abs.md)
   * [ArrayLen](cfml-functions/arraylen.md)
+* [Others]
+  * [Security Analyzer](others/security-analyzer.md)
