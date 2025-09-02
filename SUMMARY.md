@@ -7,7 +7,7 @@
   * [cflogout](cfml-tags/cflogout.md)
   * [cfabort](cfml-tags/coldfusion-cfml-reference-coldfusion-tags-tags-a-b-cfabort.html.md)
 * [CFML Functions](cfml-functions/index.md)
-  * [Functions-a-b]
+  * Functions-a-b
     * [Abs](cfml-functions/abs.md)
     * [Acos](cfml-functions/acos.md)
     * [AddSoapRequestHeader](cfml-functions/addsoaprequestheader.md)
