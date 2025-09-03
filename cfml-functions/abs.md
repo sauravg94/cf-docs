@@ -1,26 +1,33 @@
+---
+description: Absolute function
+---
+
 # Abs
 
 ### Description
 
 Absolute-value function. The absolute value of a number is the number without its sign.
+
 ### Returns
 
 The absolute value of a number.
+
 ### Category
 
 Mathematical functions
+
 ### Function syntax
 
 Abs(number)
+
 ### See also
 
 Sgn
+
 ### Parameters
 
-Parameter
-Description
-number
-A number
+Parameter Description number A number
+
 ### Example
 
 ```coldfusion
@@ -47,6 +54,7 @@ writeOutput(Abs(n3));
 writeoutput("<br>") ;
 </cfscript>
 ```
+
 ## Get help faster and easier
-New user?
-Quick links
+
+New user? Quick links

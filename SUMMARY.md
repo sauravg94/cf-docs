@@ -7,7 +7,7 @@
   * [cflogout](cfml-tags/cflogout.md)
   * [cfabort](cfml-tags/coldfusion-cfml-reference-coldfusion-tags-tags-a-b-cfabort.html.md)
 * [CFML Functions](cfml-functions/index.md)
-  * Functions-a-b
+  * [Functions-a-b](index-1/functions-a-b/README.md)
     * [Abs](cfml-functions/abs.md)
     * [Acos](cfml-functions/acos.md)
     * [AddSoapRequestHeader](cfml-functions/addsoaprequestheader.md)
@@ -64,5 +64,5 @@
     * [BitSHRN](cfml-functions/bitshrn.md)
     * [BitXor](cfml-functions/bitxor.md)
     * [BooleanFormat](cfml-functions/booleanformat.md)
-* [Others]
+* [\[Others\]](others/README.md)
   * [Security Analyzer](others/security-analyzer.md)
