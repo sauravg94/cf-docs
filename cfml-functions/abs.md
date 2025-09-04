@@ -30,9 +30,9 @@ Parameter Description number A number
 
 ### Example
 
-```coldfusion
+```javascript
 <h3>Abs Example</h3>
-<p>The absolute value of the following numbers:
+    <p>The absolute value of the following numbers:
 1,3,-4,-3.2,6 is
 <cfoutput>
 #Abs(1)#,#Abs(3)#,#Abs(-4)#,#Abs(-3.2)#,#Abs(6)#
